@@ -1,0 +1,20 @@
+<div>
+  Date Range: <nz-range-picker [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" nzShowTime></nz-range-picker>
+</div>
+<br>
+<nz-table #fasTable [nzData]="displayDataSet">
+  <thead>
+    <tr>
+      <th>S.no.</th>
+      <th>Timestamp</th>
+      <th>Fire status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of fasTable.data; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{data.Timestamp}}</td>
+      <td>{{data['Fire Status']}}</td>
+    </tr>
+  </tbody>
+</nz-table>

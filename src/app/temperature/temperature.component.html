@@ -1,0 +1,24 @@
+<div>
+  Date Range: <nz-range-picker [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" nzShowTime></nz-range-picker>
+</div>
+<br>
+<nz-table #tempTable [nzData]="displayDataSet">
+  <thead>
+    <tr>
+      <th>S.no.</th>
+      <th>Timestamp</th>
+      <th>Location</th>
+      <th>Temperature</th>
+      <th>Humidity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of tempTable.data; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{data.Timestamp}}</td>
+      <td>{{data.Loction}}</td>
+      <td>{{data.Temp}}</td>
+      <td>{{data.Humidity}}</td>
+    </tr>
+  </tbody>
+</nz-table>
